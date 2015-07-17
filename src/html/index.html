@@ -3,6 +3,9 @@
 <head>
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
+
+ <meta name="ms-webauth-uris" content="https://www.facebook.com/dialog/oauth?client_id=1015128805185023"/>
+
 </head>
 <body>
 <script>
@@ -84,6 +87,14 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+
+
+  function FBLogout() {
+    FB.logout(function(response){
+      window.location.href = "index.html";
+    });
+  }
+
 </script>
 
 <!--
@@ -103,6 +114,10 @@
   data-share="true"
   data-width="450"
   data-show-faces="true">
+</div>
+
+<div>
+  <button id="logoutB" onclick="FBLogout">Logout</button>
 </div>
 
 <script src="js/main.js"></script>
