@@ -4,7 +4,7 @@
 <title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 
- <meta name="ms-webauth-uris" content="https://www.facebook.com/dialog/oauth?client_id=1015128805185023"/>
+ <meta name="ms-webauth-uris" content="https://www.facebook.com/login.php?skip_api_login=1&api_key=1015128805185023"/>
 
 </head>
 <body>
@@ -38,6 +38,12 @@
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
+    });
+  }
+
+  function FBLogout() {
+    FB.logout(function(response){
+      window.location.href = "index.html";
     });
   }
 
@@ -89,11 +95,7 @@
   }
 
 
-  function FBLogout() {
-    FB.logout(function(response){
-      window.location.href = "index.html";
-    });
-  }
+  
 
 </script>
 
@@ -117,7 +119,7 @@
 </div>
 
 <div>
-  <button id="logoutB" onclick="FBLogout">Logout</button>
+  <button id="logoutB" onclick="FBLogout()">Logout</button>
 </div>
 
 <script src="js/main.js"></script>
