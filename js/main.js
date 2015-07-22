@@ -8,7 +8,7 @@ var windowObjectReference;
 
 function openRequestedPopup() {
   windowObjectReference = window.open(
-    "http://www.cnn.com/",
+    "http://rjs.azurewebsites.net/",
     "DescriptiveWindowName",
     "resizable,scrollbars,status"
   );
